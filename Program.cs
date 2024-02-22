@@ -10,7 +10,7 @@ namespace CSharpPractice
     {
         public static void Main()
         {
-            PositiveOrNegative();   
+            Fibonacci();   
         }
 
         private static void PositiveOrNegative()
@@ -142,5 +142,150 @@ namespace CSharpPractice
             Console.ReadKey();
         }
 
+        private static void NumberLength()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Enter the number");
+
+            int number = Convert.ToInt32(Console.ReadLine());
+            int digits = 0;
+
+            if(number == 0)
+            {
+                Console.WriteLine("1 digit");
+            }
+            else
+            {
+                while (number > 0)
+                {
+                    digits++;
+                    number /= 10;
+                }
+                Console.WriteLine("{0} digits", digits);
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void LargestOfThree() 
+        {
+            Console.Clear();
+
+            Console.WriteLine("Enter the numbers");
+
+            int firstNumber = Convert.ToInt32(Console.ReadLine());
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
+            int thirdNumber = Convert.ToInt32(Console.ReadLine());
+
+            if(firstNumber > secondNumber)
+            {
+                if(firstNumber > thirdNumber)
+                {
+                    Console.WriteLine("{0} is largest", firstNumber);
+                }
+                else
+                {
+                    Console.WriteLine("{0} is largest", thirdNumber); 
+                }
+            }
+            else
+            {
+                if(secondNumber > thirdNumber)
+                {
+                    Console.WriteLine("{0} is largest", secondNumber);
+                }
+                else
+                {
+                    Console.WriteLine("{0} is largest", thirdNumber);
+                }
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void NNaturalNumbers()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Enter the value of n");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int count = 1;
+            while(n > 0)
+            {
+                Console.WriteLine(count++);
+                n--;
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void EvenUptoN()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Enter the value of n");
+
+            int n = Convert.ToInt32(Console.ReadLine());
+            int displayNumber = 2;
+
+            while(displayNumber <= n)
+            {
+                Console.WriteLine(displayNumber); 
+                displayNumber += 2;
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void OddUptoN()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Enter the value of n");
+
+            int n = Convert.ToInt32(Console.ReadLine());
+            int displayNumber = 1;
+
+            if(n > 0)
+            {
+                do
+                {
+                    Console.WriteLine(displayNumber);
+                    displayNumber += 2;
+                } while (displayNumber <= n);
+            }
+            Console.ReadKey();
+        }
+
+        private static void Fibonacci()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Enter the value of n in the series");
+
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int first = 0;
+            int second = 1;
+            int next = 0;
+
+            Console.WriteLine(first);
+            Console.WriteLine(second);
+
+            n -= 2;
+            
+            while (n > 0)
+            {
+                next = first + second;
+                Console.WriteLine(next);
+                first = second;
+                second = next;
+                n--;
+            }
+
+            Console.ReadKey();
+
+        }
     }
 }

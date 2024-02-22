@@ -10,7 +10,7 @@ namespace CSharpPractice
     {
         public static void Main()
         {
-            Fibonacci();   
+            Factorial();   
         }
 
         private static void PositiveOrNegative()
@@ -286,6 +286,64 @@ namespace CSharpPractice
 
             Console.ReadKey();
 
+        }
+
+        private static void Armstrong()
+        {
+            Console.WriteLine("Enter the number to be checked");
+
+            int number = Convert.ToInt32(Console.ReadLine());
+            int numberCopy = number;
+            int sum = 0;
+            int digit = 0;
+
+            while(numberCopy > 0)
+            {
+                digit = numberCopy % 10;
+                sum += digit*digit*digit;
+                numberCopy = numberCopy/10;
+            }
+
+            if(sum == number)
+            {
+                Console.WriteLine("It is an armstrong number");
+            }
+            else
+            {
+                Console.WriteLine("It is not an armstrong number");
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void MultiplicationTable()
+        {
+            Console.WriteLine("Enter the number for which the table is required");
+
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("{0} x {1} = {2}", number, i, number*i);
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void Factorial()
+        {
+            Console.WriteLine("Enter the number");
+
+            int number = Convert.ToInt32(Console.ReadLine());
+            int sum = 1;
+
+            for(int i = number; i>0; i--)
+            {
+                sum *= i;
+            }
+
+            Console.WriteLine("Factorial of {0} is {1}", number, sum);
+            Console.ReadKey();
         }
     }
 }

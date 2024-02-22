@@ -10,7 +10,7 @@ namespace CSharpPractice
     {
         public static void Main()
         {
-            Factorial();   
+            ReverseStringAndCheckPalindrome();   
         }
 
         private static void PositiveOrNegative()
@@ -343,6 +343,275 @@ namespace CSharpPractice
             }
 
             Console.WriteLine("Factorial of {0} is {1}", number, sum);
+            Console.ReadKey();
+        }
+
+        private static void Prime()
+        {
+            Console.WriteLine("Enter the number to be checked");
+
+            int number = Convert.ToInt32(Console.ReadLine());
+            bool prime = true;
+            
+            for(int i = 2; i <= number / 2; i++)
+            {
+                if(number % i == 0)
+                {
+                    Console.WriteLine("Composite");
+                    prime = false;
+                    break;
+                }
+            }
+            if(number == 1)
+            {
+                Console.WriteLine("Not defined");
+            }
+            else if(prime)
+            {
+                Console.WriteLine("Prime");
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void PrimeToN()
+        {
+            Console.WriteLine("Enter the limit");
+
+            int limit = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 2; i<=limit; i++)
+            {
+                bool prime = true;
+
+                for(int j = 2; j <= i/2; j++)
+                {
+                    if(i%j == 0)
+                    {
+                        prime = false;
+                        break;
+                    }
+                }
+
+                if(prime)
+                {
+                    Console.WriteLine(i);
+                }
+
+            }
+
+            Console.ReadLine();
+
+        }
+
+        private static void PrimeBetweenRange()
+        {
+            Console.WriteLine("Enter the lower limit");
+
+            int lower = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the upper limit");
+
+            int upper = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = lower; i <= upper; i++)
+            {
+                bool prime = true;
+
+                for (int j = 2; j <= i / 2; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            Console.ReadLine();
+        }
+
+        private static void StarLeftTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 1; i <= levels; i++)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void NumberLeftTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= levels; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0} ", j);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void ContinuousEvenNumbersLeftTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+            int printNumber = 2;
+            for (int i = 1; i <= levels; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0}\t", printNumber);
+                    printNumber += 2;
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void ContinuousAlphabetLeftTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+            int printCharacter = 65;
+            for (int i = 1; i <= levels; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0} ", (char)printCharacter);
+                    printCharacter++;
+                    if(printCharacter > 90)
+                    {
+                        printCharacter = 65;
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void ContinuousNumbersUpsideDownLeftTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = levels; i > 0; i--)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0} ", j);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void ContinuousNumbersNormalAndUpsideDownLeftTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 1; i<= levels; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0} ", j);
+                }
+                Console.WriteLine();
+            }
+            for (int i = levels-1; i > 0; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0} ", j);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void ContinuousNumbersRightTrianglePattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 1; i<= levels;i++)
+            {
+                for(int k = 0; k< levels-i; k++)
+                {
+                    Console.Write(" ");
+                }
+                for(int j = 1; j<= i; j++)
+                {
+                    Console.Write("{0}", j);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void NumberPyramidPattern()
+        {
+            Console.WriteLine("Enter the number of levels");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= levels; i++)
+            {
+                for (int k = 0; k < levels - i; k++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("{0}", j);
+                }
+                for( int l = i - 1; l >= 1; l--)
+                {
+                    Console.Write("{0}", l);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        private static void ReverseStringAndCheckPalindrome()
+        {
+            Console.WriteLine("Enter the string");
+            string word = Console.ReadLine();
+            string reverse = "";
+
+            int index = word.Length - 1;
+
+            while(index >= 0)
+            {
+                reverse = reverse + word[index];
+                index--;
+            }
+
+            Console.WriteLine("Reversed word is {0}", reverse);
+
+            if(reverse.Equals(word))
+            {
+                Console.WriteLine("Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("Not a Palindrome");
+            }
             Console.ReadKey();
         }
     }

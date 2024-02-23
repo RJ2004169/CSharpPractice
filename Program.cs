@@ -10,7 +10,7 @@ namespace CSharpPractice
     {
         public static void Main()
         {
-            ReverseStringAndCheckPalindrome();   
+            Factorial();
         }
 
         private static void PositiveOrNegative()
@@ -19,8 +19,8 @@ namespace CSharpPractice
 
             Console.WriteLine("Enter the number");
             int num1 = Convert.ToInt32(Console.ReadLine());
-            
-            if(num1 < 0)
+
+            if (num1 < 0)
                 Console.WriteLine("Negative");
             else if (num1 > 0)
                 Console.WriteLine("Positive");
@@ -36,18 +36,18 @@ namespace CSharpPractice
 
             Console.WriteLine("Enter the number");
             int num1 = Convert.ToInt32(Console.ReadLine());
-            if(num1 == 0)
+            if (num1 == 0)
                 Console.WriteLine("Neither odd nor even");
             else
-                if(num1 == 2)
-                    Console.WriteLine("Odd number");
+                if (num1 == 2)
+                Console.WriteLine("Odd number");
+            else
+            {
+                if (num1 % 2 == 0)
+                    Console.WriteLine("Even number");
                 else
-                {
-                    if(num1%2==0)
-                        Console.WriteLine("Even number");
-                    else
-                        Console.WriteLine("Odd number");
-                }
+                    Console.WriteLine("Odd number");
+            }
 
             Console.ReadKey();
         }
@@ -62,7 +62,7 @@ namespace CSharpPractice
             Console.WriteLine("Enter second number");
             int num2 = Convert.ToInt32(Console.ReadLine());
 
-            if(num1 > num2)
+            if (num1 > num2)
                 Console.WriteLine("Greater is {0}", num1);
             else
                 Console.WriteLine("Greater is {0}", num2);
@@ -151,7 +151,7 @@ namespace CSharpPractice
             int number = Convert.ToInt32(Console.ReadLine());
             int digits = 0;
 
-            if(number == 0)
+            if (number == 0)
             {
                 Console.WriteLine("1 digit");
             }
@@ -168,7 +168,7 @@ namespace CSharpPractice
             Console.ReadKey();
         }
 
-        private static void LargestOfThree() 
+        private static void LargestOfThree()
         {
             Console.Clear();
 
@@ -178,20 +178,20 @@ namespace CSharpPractice
             int secondNumber = Convert.ToInt32(Console.ReadLine());
             int thirdNumber = Convert.ToInt32(Console.ReadLine());
 
-            if(firstNumber > secondNumber)
+            if (firstNumber > secondNumber)
             {
-                if(firstNumber > thirdNumber)
+                if (firstNumber > thirdNumber)
                 {
                     Console.WriteLine("{0} is largest", firstNumber);
                 }
                 else
                 {
-                    Console.WriteLine("{0} is largest", thirdNumber); 
+                    Console.WriteLine("{0} is largest", thirdNumber);
                 }
             }
             else
             {
-                if(secondNumber > thirdNumber)
+                if (secondNumber > thirdNumber)
                 {
                     Console.WriteLine("{0} is largest", secondNumber);
                 }
@@ -211,7 +211,7 @@ namespace CSharpPractice
             Console.WriteLine("Enter the value of n");
             int n = Convert.ToInt32(Console.ReadLine());
             int count = 1;
-            while(n > 0)
+            while (n > 0)
             {
                 Console.WriteLine(count++);
                 n--;
@@ -229,9 +229,9 @@ namespace CSharpPractice
             int n = Convert.ToInt32(Console.ReadLine());
             int displayNumber = 2;
 
-            while(displayNumber <= n)
+            while (displayNumber <= n)
             {
-                Console.WriteLine(displayNumber); 
+                Console.WriteLine(displayNumber);
                 displayNumber += 2;
             }
 
@@ -247,7 +247,7 @@ namespace CSharpPractice
             int n = Convert.ToInt32(Console.ReadLine());
             int displayNumber = 1;
 
-            if(n > 0)
+            if (n > 0)
             {
                 do
                 {
@@ -274,7 +274,7 @@ namespace CSharpPractice
             Console.WriteLine(second);
 
             n -= 2;
-            
+
             while (n > 0)
             {
                 next = first + second;
@@ -297,14 +297,14 @@ namespace CSharpPractice
             int sum = 0;
             int digit = 0;
 
-            while(numberCopy > 0)
+            while (numberCopy > 0)
             {
                 digit = numberCopy % 10;
-                sum += digit*digit*digit;
-                numberCopy = numberCopy/10;
+                sum += digit * digit * digit;
+                numberCopy = numberCopy / 10;
             }
 
-            if(sum == number)
+            if (sum == number)
             {
                 Console.WriteLine("It is an armstrong number");
             }
@@ -322,9 +322,9 @@ namespace CSharpPractice
 
             int number = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                Console.WriteLine("{0} x {1} = {2}", number, i, number*i);
+                Console.WriteLine("{0} x {1} = {2}", number, i, number * i);
             }
 
             Console.ReadKey();
@@ -337,7 +337,7 @@ namespace CSharpPractice
             int number = Convert.ToInt32(Console.ReadLine());
             int sum = 1;
 
-            for(int i = number; i>0; i--)
+            for (int i = number; i > 0; i--)
             {
                 sum *= i;
             }
@@ -352,21 +352,21 @@ namespace CSharpPractice
 
             int number = Convert.ToInt32(Console.ReadLine());
             bool prime = true;
-            
-            for(int i = 2; i <= number / 2; i++)
+
+            for (int i = 2; i <= number / 2; i++)
             {
-                if(number % i == 0)
+                if (number % i == 0)
                 {
                     Console.WriteLine("Composite");
                     prime = false;
                     break;
                 }
             }
-            if(number == 1)
+            if (number == 1)
             {
                 Console.WriteLine("Not defined");
             }
-            else if(prime)
+            else if (prime)
             {
                 Console.WriteLine("Prime");
             }
@@ -380,20 +380,20 @@ namespace CSharpPractice
 
             int limit = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = 2; i<=limit; i++)
+            for (int i = 2; i <= limit; i++)
             {
                 bool prime = true;
 
-                for(int j = 2; j <= i/2; j++)
+                for (int j = 2; j <= i / 2; j++)
                 {
-                    if(i%j == 0)
+                    if (i % j == 0)
                     {
                         prime = false;
                         break;
                     }
                 }
 
-                if(prime)
+                if (prime)
                 {
                     Console.WriteLine(i);
                 }
@@ -439,9 +439,9 @@ namespace CSharpPractice
             Console.WriteLine("Enter the number of levels");
             int levels = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = 1; i <= levels; i++)
+            for (int i = 1; i <= levels; i++)
             {
-                for(int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++)
                 {
                     Console.Write("* ");
                 }
@@ -494,7 +494,7 @@ namespace CSharpPractice
                 {
                     Console.Write("{0} ", (char)printCharacter);
                     printCharacter++;
-                    if(printCharacter > 90)
+                    if (printCharacter > 90)
                     {
                         printCharacter = 65;
                     }
@@ -509,9 +509,9 @@ namespace CSharpPractice
             Console.WriteLine("Enter the number of levels");
             int levels = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = levels; i > 0; i--)
+            for (int i = levels; i > 0; i--)
             {
-                for(int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++)
                 {
                     Console.Write("{0} ", j);
                 }
@@ -525,7 +525,7 @@ namespace CSharpPractice
             Console.WriteLine("Enter the number of levels");
             int levels = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = 1; i<= levels; i++)
+            for (int i = 1; i <= levels; i++)
             {
                 for (int j = 1; j <= i; j++)
                 {
@@ -533,7 +533,7 @@ namespace CSharpPractice
                 }
                 Console.WriteLine();
             }
-            for (int i = levels-1; i > 0; i--)
+            for (int i = levels - 1; i > 0; i--)
             {
                 for (int j = 1; j <= i; j++)
                 {
@@ -549,13 +549,13 @@ namespace CSharpPractice
             Console.WriteLine("Enter the number of levels");
             int levels = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = 1; i<= levels;i++)
+            for (int i = 1; i <= levels; i++)
             {
-                for(int k = 0; k< levels-i; k++)
+                for (int k = 0; k < levels - i; k++)
                 {
                     Console.Write(" ");
                 }
-                for(int j = 1; j<= i; j++)
+                for (int j = 1; j <= i; j++)
                 {
                     Console.Write("{0}", j);
                 }
@@ -579,7 +579,7 @@ namespace CSharpPractice
                 {
                     Console.Write("{0}", j);
                 }
-                for( int l = i - 1; l >= 1; l--)
+                for (int l = i - 1; l >= 1; l--)
                 {
                     Console.Write("{0}", l);
                 }
@@ -596,7 +596,7 @@ namespace CSharpPractice
 
             int index = word.Length - 1;
 
-            while(index >= 0)
+            while (index >= 0)
             {
                 reverse = reverse + word[index];
                 index--;
@@ -604,13 +604,178 @@ namespace CSharpPractice
 
             Console.WriteLine("Reversed word is {0}", reverse);
 
-            if(reverse.Equals(word))
+            if (reverse.Equals(word))
             {
                 Console.WriteLine("Palindrome");
             }
             else
             {
                 Console.WriteLine("Not a Palindrome");
+            }
+            Console.ReadKey();
+        }
+
+        private static void ReadAndDisplayArrayWithSum()
+        {
+            Console.WriteLine("Enter the size");
+
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[size];
+            int sum = 0;
+
+            Console.WriteLine("Enter the elements");
+
+            for (int i = 0; i < size; i++)
+            {
+                array[i] = Convert.ToInt32(Console.ReadLine());
+                sum += array[i];
+            }
+            Console.WriteLine("Elements are:");
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write("{0} ", array[i]);
+            }
+
+
+            Console.WriteLine("\nSum is {0}", sum);
+
+            Console.ReadKey();
+        }
+
+        private static void ReadArrayAndSearch()
+        {
+            Console.WriteLine("Enter the size");
+
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[size];
+            bool found = false;
+
+            Console.WriteLine("Enter the elements");
+
+            for(int i = 0; i < size; i++)
+            {
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Enter the element to be searched for");
+
+            int searchElement = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 0; i < size; i++)
+            {
+                if (searchElement == array[i])
+                {
+                    Console.WriteLine("Element found {0}", array[i]);
+                    found = true;
+                    break;
+                }
+            }
+
+            if(!found)
+            {
+                Console.WriteLine("Element not found");
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void SortArray()
+        {
+            Console.WriteLine("Enter the size");
+
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[size];
+            int temp = 0;
+
+            Console.WriteLine("Enter the elements");
+
+            for (int i = 0; i < size; i++)
+            {
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for(int i = 0; i < size;i++)
+            {
+                for(int j = i+1; j < size; j++)
+                {
+                    if(array[i] > array[j])
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Sorted array is: ");
+            for (int i = 0; i < size; ++i)
+            {
+                Console.Write("{0} ", array[i]);
+            }
+            Console.ReadKey();
+        }
+
+        private static void ArrayMultiplication2D()
+        {
+            Console.WriteLine("Enter row and column of array 1");
+            int row1 = Convert.ToInt32(Console.ReadLine()); 
+            int column1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter row and column of array 2");
+            int row2 = Convert.ToInt32(Console.ReadLine()); 
+            int column2 = Convert.ToInt32(Console.ReadLine());
+            
+            if( column1 == row2)
+            {
+                int[,] array1 = new int[row1, column1];
+                int[,] array2 = new int[row2, column2];
+                int[,] array3 = new int[row1, column2];
+
+                Console.WriteLine("Enter the elements of array 1");
+                
+                for( int i = 0; i<row1; i++)
+                {
+                    for( int j =0; j<column1; j++)
+                    {
+                        array1[i,j] = Convert.ToInt32(Console.ReadLine());
+                    }
+                }
+
+                Console.WriteLine("Enter the elements of array 2");
+                for (int i = 0; i < row2; i++)
+                {
+                    for (int j = 0; j < column2; j++)
+                    {
+                        array2[i, j] = Convert.ToInt32(Console.ReadLine());
+                    }
+                }
+
+                for(int i = 0; i < row1; i++)
+                {
+                    for (int j = 0; j < column2; j++)
+                    {
+                        for(int k = 0; k < column1; k++)
+                        {
+                            array3[i, j] += array1[i, k] * array2[k, j];
+                        }
+                    }
+                }
+
+                Console.WriteLine("Product array is: ");
+
+                for(int i = 0; i < row1;i++)
+                {
+                    for(int  j = 0; j < column2; j++)
+                    {
+                        Console.Write("{0}  ", array3[i,j]);
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+
+            else
+            {
+                Console.WriteLine("Multiplication not possible");
             }
             Console.ReadKey();
         }
